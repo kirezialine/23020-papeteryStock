@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SignUp Form</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+<div class="wrapper">
+  <h1 class="log">Sign Up</h1>
+  <!--    <p>Welcome back you've <br> been missed!</p>-->
+  <form action="#" th:action="@{/admin/signup}"
+        th:object="${admin}" method="post">
+
+<!--            <input type="text" placeholder="Enter username">-->
+<!--            <input type="password" placeholder="Password">-->
+
+    <input type="hidden" th:field="*{id}"><br>
+    <input type="text" th:field="*{email}"
+           placeholder="email" required>
+    <input type="password" th:field="*{password}"
+           placeholder="password" required>
+    <p class="recover">
+      <a href="#">Recover Password</a>
+    </p>
+    <!--        <closeform></closeform>-->
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <p class="or">
+    ----- or continue with -----
+  </p>
+  <div class="icons">
+    <i class="fab fa-google"></i>
+    <i class="fab fa-github"></i>
+    <i class="fab fa-facebook"></i>
+  </div>
+  <div class="not-member">
+    <span class="log">Not a member? </span><a th:href="@{/admins/login}">Login</a>
+  </div>
+</div>
+</body>
+</html>
